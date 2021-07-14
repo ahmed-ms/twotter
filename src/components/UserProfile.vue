@@ -10,7 +10,7 @@
         <strong>Follower : </strong>{{ followers }}
       </div>
       <form class="m-2" @submit.prevent="addNewTwotte">
-        <h5>New Teotte</h5>
+        <h5>New Teotte <span>[ {{ newTwotteCounet}} / 180 ]</span></h5>
         <div class="mb-3">
           <label for="twotteTitle" class="form-label">Title</label>
           <input
@@ -25,6 +25,7 @@
           <label for="twotteContent" class="form-label">Twotte content</label>
           <textarea
             class="form-control"
+            :class="{'border border-danger' :newTwotteCounet >180}"
             v-model="newTwotteContent"
             id="twotteContent"
             rows="3"
@@ -110,7 +111,11 @@ export default {
     fullName() {
       return `${this.user.firstName} ${this.user.lastName}`;
     },
+     newTwotteCounet(){
+      return this.newTwotteContent.length;
+    }
   },
+ 
   methods: {
     favouriteToggel(id) {
       let index = id - 1;
@@ -156,5 +161,11 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+h5{
+  & span{
+    font-size: 12px;
+    font-weight: 100;
+  }
+}
 </style>

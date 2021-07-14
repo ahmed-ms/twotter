@@ -1,20 +1,29 @@
 <template>
-  <div class="container mt-5">
-    <div class="row">
-      <UserProfile />
+  <div class="">
+    <NavBar />
+    <div class="container">
+      <div class="row">
+        <UserProfile />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import UserProfile from "./components/UserProfile.vue";
+import NavBar from "./components/NavBar.vue";
+
 export default {
   name: "App",
   components: {
     UserProfile,
+    NavBar,
   },
 };
 </script>
 
-<style>
+<style lang="scss">
+#app {
+  display: block;
+}
 </style>
