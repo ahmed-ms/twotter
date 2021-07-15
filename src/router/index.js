@@ -25,7 +25,7 @@ router.beforeEach(async (to, from, next) => {
   
 
   
-    store.dispatch('User/setUser', users[2]);
+    store.dispatch('User/setUser', users[0]);
   
  
 
