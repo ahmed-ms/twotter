@@ -1,29 +1,34 @@
 <template>
-  <div class="">
+  <div id="app">
     <NavBar />
     <div class="container">
       <div class="row">
-        <UserProfile />
+        <router-view />
       </div>
     </div>
   </div>
 </template>
 
+
+
 <script>
-import UserProfile from "./components/UserProfile.vue";
 import NavBar from "./components/NavBar.vue";
 
+
 export default {
-  name: "App",
   components: {
-    UserProfile,
     NavBar,
+  },
+  setup() {
+   
+    
   },
 };
 </script>
 
+
 <style lang="scss">
 #app {
-  display: block;
+  margin: 0;
 }
 </style>

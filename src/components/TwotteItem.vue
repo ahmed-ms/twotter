@@ -15,6 +15,14 @@
 <script>
 export default {
   name: "TwotteItem",
+  setup(props, ctx) {
+    function favourite(id) {
+      ctx.emit("fav", id);
+    }
+    return {
+      favourite
+    }
+  },
   props: {
     twotte: {
       type: Object,
@@ -25,11 +33,7 @@ export default {
       required: true,
     },
   },
-  methods: {
-    favourite(id) {
-      this.$emit("fav", id);
-    },
-  },
+  
 };
 </script>
 <style scoped>

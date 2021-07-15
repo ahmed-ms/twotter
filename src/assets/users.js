@@ -6,7 +6,7 @@ export const users = [
       "lastName": "Romney",
       "email": "mitchellromney@theearthissquare.com",
       "isAdmin": true,
-      "twoots": [
+      "twottes": [
         { "id": 1, "content": "Twotter is Amazing!" },
         { "id": 2, "content": "Don't forget to subscriber to The Earth is Square!" }
       ]
@@ -18,7 +18,7 @@ export const users = [
       "lastName": "Cole",
       "email": null,
       "isAdmin": false,
-      "twoots": []
+      "twottes": []
     },
     {
       "id": 3,
@@ -27,7 +27,7 @@ export const users = [
       "lastName": "conner",
       "email": null,
       "isAdmin": false,
-      "twoots": []
+      "twottes": []
     },
     {
       "id": 4,
@@ -36,6 +36,6 @@ export const users = [
       "lastName": "Burnham",
       "email": null,
       "isAdmin": false,
-      "twoots": []
+      "twottes": []
     }
   ];
