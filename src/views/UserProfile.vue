@@ -1,5 +1,5 @@
 <template>
-  <div class="col-3 user-profile__wrapper">
+  <div class="col-3 user-profile__wrapper"  v-if="user">
     <div class="card">
       <div class="card-body">
         <CardTitle :userName="user.username" :drafts="state.drafts.length" />
@@ -70,7 +70,10 @@
       </form>
     </div>
   </div>
-  <div class="col user-__wrapptwotteser">
+  <div v-else class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+  <div class="col user-__wrapptwotteser"  v-if="user">
     <ol class="list-group list-group-numbered">
       <TwotteItem
         v-for="twotte in user.twottes"
@@ -81,6 +84,9 @@
       />
     </ol>
   </div>
+   <div v-else class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
 </template>
 
 <script>
