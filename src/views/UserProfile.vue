@@ -99,8 +99,8 @@ export default {
   },
   setup() {
     const store = useStore();
-    const c_user = computed(() => store.state.user);
-    const user=c_user.value;
+    const user = computed(() => store.state.User.user);
+    
     const state = reactive({
       newTwotteTitile: "",
       newTwotteContent: "",
@@ -116,7 +116,7 @@ export default {
     const newTwotteCount = computed(() => state.newTwotteContent.length);
     function favouriteToggel(id) {
       let index = id - 1;
-      user.twottes[index].fav = !user.twottes[index].fav;
+      user.value.twottes[index].fav = !user.value.twottes[index].fav;
     }
 
     function addNewTwotte() {
@@ -135,7 +135,7 @@ export default {
       }
       if (state.errors.length === 0) {
         const newTwotte = {
-          id: user.twottes.length + 1,
+          id: user.value.twottes.length + 1,
           title: state.newTwotteTitile,
           content: state.newTwotteContent,
           fav: false,
@@ -143,7 +143,7 @@ export default {
         if (state.newTwotteType === "draft") {
           state.drafts.push(newTwotte);
         } else {
-          user.twottes.push(newTwotte);
+          user.value.twottes.push(newTwotte);
         }
 
         (state.newTwotteContent = ""), (state.newTwotteTitile = "");
